@@ -2,6 +2,255 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+<div class="page-header page-header-light">
+    <div class="page-header-content header-elements-md-inline">
+        <div class="page-title d-flex">
+            <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> - Children</h4>
+            <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+        </div>
+    </div>
+    <div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
+        <div class="d-flex">
+            <div class="breadcrumb">
+                <a href="@Url.Action("Index","Home")" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Home</a>
+                <span class="breadcrumb-item active">Children List</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm("", "", FormMethod.Post, new { @class = "form form-horizontal", @id = "validation-form" }))
+            {
+                <div class="card">
+                    <div class="card-header header-elements-inline">
+                        <h5 class="card-title"></h5>
+                        <div class="col-lg-7 text-right">
+                            <input type="button" class="btn btn-outline-primary legitRipple" value="Save" name="create" tabindex="15" />
+                            <input type="button" class="btn btn-outline-primary legitRipple" value="Save & Continue" name="create" tabindex="15" />
+                            <input type="button" class="btn btn-outline-primary legitRipple" value="Save & New" name="create" tabindex="15" />
+                            <a href="@Url.Action("Index", "Customer")" class="btn btn-outline-primary legitRipple" tabindex="18">Back</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Children Information</h5>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    @Html.Label("Full Name", null, new { @class = "col-sm-6 col-lg-3 control-label" })
+                                    <div class="col-sm-6 col-lg-9">
+                                        @Html.TextBox("Full Name", null, new { @tabindex = 1, @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Age", null, new { @class = "col-sm-6 col-lg-3 control-label" })
+                                    <div class="col-sm-6 col-lg-9">
+                                        @Html.TextBox("Age", null, new { @tabindex = 3, @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Gender", null, new { @class = "col-sm-6 col-lg-3 form-check-label" })
+                                    <div class="form-check">
+                                        <div class="col-sm-6 col-lg-9">
+                                            @Html.RadioButton("Male", true, new { @tabindex = 5, @class = "form-check-input" }) Male
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="col-sm-6 col-lg-9">
+                                            @Html.RadioButton("Female", false, new { @tabindex = 6, @class = "form-check-input" }) Female
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    @Html.Label("DOB", null, new { @class = "col-sm-6 col-lg-3 control-label" })
+                                    <div class="col-sm-6 col-lg-9">
+                                        @Html.TextBox("D.O.B", null, new { @tabindex = 2, @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Address", null, new { @class = "col-sm-6 col-lg-3 control-label" })
+                                    <div class="col-sm-6 col-lg-9">
+                                        @Html.TextArea("Address", null, new { @tabindex = 4, @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Aadhaar Number", null, new { @class = "col-sm-6 col-lg-3 control-label" })
+                                    <div class="col-sm-6 col-lg-9">
+                                        @Html.TextBox("Aadhaar Number", null, new { @tabindex = 7, @class = "form-control" })
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Mother's Information</h5>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    @Html.Label("Full Name", null, new { @class = "col-sm-6 col-lg-3 control-label" })
+                                    <div class="col-sm-6 col-lg-9">
+                                        @Html.TextBox("Full Name", null, new { @tabindex = 1, @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Age", null, new { @class = "col-sm-6 col-lg-3 control-label" })
+                                    <div class="col-sm-6 col-lg-9">
+                                        @Html.TextBox("Age", null, new { @tabindex = 3, @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Contact No", null, new { @class = "col-sm-6 col-lg-3 form-check-label" })
+                                    <div class="col-sm-6 col-lg-9">
+                                        @Html.TextBox("Contact No", null, new { @tabindex = 5, @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Qualification", null, new { @class = "col-sm-6 col-lg-3 form-check-label" })
+                                    <div class="col-sm-6 col-lg-9">
+                                        @Html.TextBox("Qualification", null, new { @tabindex = 7, @class = "form-control" })
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    @Html.Label("DOB", null, new { @class = "col-sm-6 col-lg-3 control-label" })
+                                    <div class="col-sm-6 col-lg-9">
+                                        @Html.TextBox("D.O.B", null, new { @tabindex = 2, @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Profession", null, new { @class = "col-sm-6 col-lg-3 control-label" })
+                                    <div class="col-sm-6 col-lg-9">
+                                        @Html.TextBox("Profession", null, new { @tabindex = 4, @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Earning Per annum", null, new { @class = "col-sm-8 col-lg-6 control-label" })
+                                    <div class="col-sm-6 col-lg-9">
+                                        @Html.TextBox("Earning Per annum", null, new { @tabindex = 4, @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Aadhaar Number", null, new { @class = "col-sm-6 col-lg-3 control-label" })
+                                    <div class="col-sm-6 col-lg-9">
+                                        @Html.TextBox("Aadhaar Number", null, new { @tabindex = 7, @class = "form-control" })
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Father's Information</h5>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    @Html.Label("Full Name", null, new { @class = "col-sm-6 col-lg-3 control-label" })
+                                    <div class="col-sm-6 col-lg-9">
+                                        @Html.TextBox("Full Name", null, new { @tabindex = 1, @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Age", null, new { @class = "col-sm-6 col-lg-3 control-label" })
+                                    <div class="col-sm-6 col-lg-9">
+                                        @Html.TextBox("Age", null, new { @tabindex = 3, @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Contact No", null, new { @class = "col-sm-6 col-lg-3 form-check-label" })
+                                    <div class="col-sm-6 col-lg-9">
+                                        @Html.TextBox("Contact No", null, new { @tabindex = 5, @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Qualification", null, new { @class = "col-sm-6 col-lg-3 form-check-label" })
+                                    <div class="col-sm-6 col-lg-9">
+                                        @Html.TextBox("Qualification", null, new { @tabindex = 7, @class = "form-control" })
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    @Html.Label("DOB", null, new { @class = "col-sm-6 col-lg-3 control-label" })
+                                    <div class="col-sm-6 col-lg-9">
+                                        @Html.TextBox("D.O.B", null, new { @tabindex = 2, @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Profession", null, new { @class = "col-sm-6 col-lg-3 control-label" })
+                                    <div class="col-sm-6 col-lg-9">
+                                        @Html.TextBox("Profession", null, new { @tabindex = 4, @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Earning Per annum", null, new { @class = "col-sm-8 col-lg-6 control-label" })
+                                    <div class="col-sm-6 col-lg-9">
+                                        @Html.TextBox("Earning Per annum", null, new { @tabindex = 4, @class = "form-control" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Aadhaar Number", null, new { @class = "col-sm-6 col-lg-3 control-label" })
+                                    <div class="col-sm-6 col-lg-9">
+                                        @Html.TextBox("Aadhaar Number", null, new { @tabindex = 7, @class = "form-control" })
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            }
+
+        </div>
+    </div>
 </div>
