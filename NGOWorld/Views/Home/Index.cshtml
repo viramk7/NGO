@@ -47,7 +47,7 @@
                                 <div class="form-group">
                                     @Html.Label("Full Name", null, new { @class = "col-sm-6 col-lg-3 control-label" })
                                     <div class="col-sm-6 col-lg-9">
-                                        @Html.TextBox("Full Name", null, new { @tabindex = 1, @class = "form-control" })
+                                        @Html.Kendo().TextBox().Name("FullName").HtmlAttributes(new { @tabindex="1"})
                                     </div>
                                 </div>
 

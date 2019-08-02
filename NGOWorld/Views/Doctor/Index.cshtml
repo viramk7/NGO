@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="page-header page-header-light">
+    <div class="page-header-content header-elements-md-inline">
+        <div class="page-title d-flex">
+            <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> - Doctor</h4>
+            <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+        </div>
+    </div>
+    <div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
+        <div class="d-flex">
+            <div class="breadcrumb">
+                <a href="@Url.Action("Index","Home")" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Home</a>
+                <span class="breadcrumb-item active">Doctor List</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header header-elements-inline">
+                    <h5 class="card-title">Doctor List</h5>
+                </div>
+                <div class="card-body">
+                    @(Html.Kendo().Grid<tblDoctor>()
+                                .Name("grid")
+                                .Columns(columns =>
+                                {
+                                     columns.Command(command =>
+                                     {
+                                            command.Edit().Text(" ");
+                                            command.Destroy().Text(" ");
+                                     }).Title("Action").HtmlAttributes(WebHelper.ActionCenterColumnStyleWithCanEdit)
+                                                    .HeaderHtmlAttributes(WebHelper.ActionCenterColumnStyleWithCanEdit);
+                                
+                                     columns.Bound(d => d.DoctorName);
+                                     columns.Bound(d => d.Speciality);
+                                     columns.Bound(d => d.Hospital);
+                                })
+                                .ToolBar(toolbar =>
+                                {
+                                      toolbar.Create().Text("Add");
+                                })
+                                .Editable(editable =>
+                                {
+                                       editable.Mode(GridEditMode.PopUp);
+                                       editable.DisplayDeleteConfirmation("Are you sure you want to delete these Doctor?");
+                                       editable.Window(x => x.Title("Manage Doctor"));
+                                })
+                                .Pageable(x =>
+                                {
+                                                x.Refresh(true);
+                                                x.PageSizes(WebHelper.PageSizes);
+                                })
+                                .Sortable(sortable => sortable.AllowUnsort(false))
+                                .Filterable()
+                                .NoRecords()
+                                .DataSource(dataSource => dataSource
+                                .Ajax()
+                                .ServerOperation(true)
+                                .PageSize(WebHelper.PageSize)
+                                .Model(model => model.Id(d => d.Id))
+                                .Events(events => events.Error("onError(\"grid\")"))
+                                .Create(update => update.Action("KendoSave", "Doctor"))
+                                .Read(read => read.Action("KendoRead", "Doctor"))
+                                .Update(update => update.Action("KendoSave", "Doctor"))
+                                .Destroy(update => update.Action("KendoDestroy", "Doctor"))
+                                ))
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

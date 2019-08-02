@@ -9,20 +9,26 @@
       "wwwroot/css/layout.css",
       "wwwroot/css/components.css",
       "wwwroot/css/colors.css",
-      "wwwroot/css/bootbox.css"
+      "wwwroot/css/bootbox.css",
+      "wwwroot/lib/kendo-ui/styles/kendo.common.min.css",
+      "wwwroot/lib/kendo-ui/styles/kendo.silver.min.css",
+      "wwwroot/lib/kendo-ui/styles/kendoCustom.css"
     ]
   },
   {
     "outputFileName": "wwwroot/js/ngoworldscript.min.js",
     "inputFiles": [
       "wwwroot/js/jquery.min.js",
+      "wwwroot/lib/kendo-ui/js/kendo.all.min.js",
+      "wwwroot/lib/kendo-ui/js/kendo.aspnetmvc.min.js",
       "wwwroot/js/jquery.validate.min.js",
       "wwwroot/js/jquery.validate.unobtrusive.min.js",
       "wwwroot/js/bootstrap.bundle.min.js",
       "wwwroot/js/bootstrap.min.js",
       "wwwroot/js/bootbox.js",
-      "wwwroot/js/app.js"
-      //"wwwroot/js/Common.js",
+      "wwwroot/js/app.js",
+
+      "wwwroot/js/Common.js"
     ],
     // Optionally specify minification options
     "minify": {

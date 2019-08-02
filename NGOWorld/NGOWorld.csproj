@@ -5,17 +5,26 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="wwwroot\kendo-ui\**" />
+    <Content Remove="wwwroot\kendo-ui\**" />
+    <EmbeddedResource Remove="wwwroot\kendo-ui\**" />
+    <None Remove="wwwroot\kendo-ui\**" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier" Version="2.9.406" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
+    <PackageReference Include="Telerik.UI.for.AspNet.Core.Trial" Version="2018.3.911" />
   </ItemGroup>
 
 
   <ItemGroup>
-    <Folder Include="wwwroot\kendo-ui\" />
+    <ProjectReference Include="..\NGOWorld.Data\NGOWorld.Data.csproj" />
+    <ProjectReference Include="..\NGOWorld.Service\NGOWorld.Service.csproj" />
   </ItemGroup>
 
 </Project>
