@@ -6,6 +6,7 @@ using Kendo.Mvc;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using NGOWorld.Common;
 using NGOWorld.Entity.CustomModel;
 using NGOWorld.Service.DoctorService;
@@ -15,10 +16,12 @@ namespace NGOWorld.Controllers
     public class DoctorController : Controller
     {
         private readonly IDoctorService _service;
+        private readonly ILogger<DoctorController> _logger;
 
-        public DoctorController(IDoctorService service)
+        public DoctorController(IDoctorService service, ILogger<DoctorController> logger)
         {
             _service = service;
+            _logger = logger;
         }
 
         public IActionResult Index()
@@ -42,6 +45,7 @@ namespace NGOWorld.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.StackTrace);
                 return Json(ex);
             }
 
@@ -70,6 +74,7 @@ namespace NGOWorld.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.StackTrace);
                 message = CommonHelper.GetErrorMessage(ex);
             }
 
@@ -93,6 +98,7 @@ namespace NGOWorld.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.StackTrace);
                 deleteMessage = CommonHelper.GetErrorMessage(ex);
             }
 

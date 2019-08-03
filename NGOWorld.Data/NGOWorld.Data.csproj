@@ -16,4 +16,10 @@
     <ProjectReference Include="..\NGOWorld.Entity\NGOWorld.Entity.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Microsoft.Extensions.Logging.Console">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.logging.console\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Console.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
