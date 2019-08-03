@@ -7,8 +7,7 @@ using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
 using Microsoft.AspNetCore.Mvc;
 using NGOWorld.Common;
-using NGOWorld.Data.CustomModel;
-using NGOWorld.Data.Entities;
+using NGOWorld.Entity.CustomModel;
 using NGOWorld.Service.DoctorService;
 
 namespace NGOWorld.Controllers

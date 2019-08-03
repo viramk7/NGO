@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NGOWorld.Data.Entities;
+using NGOWorld.Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;

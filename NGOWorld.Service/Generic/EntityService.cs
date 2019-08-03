@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using NGOWorld.Data.Entities;
 using NGOWorld.Data.Repository.Generic;
 using System;
 using System.Collections.Generic;

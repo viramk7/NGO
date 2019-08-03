@@ -15,8 +15,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json.Serialization;
-using NGOWorld.CoreHelper;
 using NGOWorld.Data;
+using NGOWorld.Entity.Mapping;
 
 namespace NGOWorld
 {

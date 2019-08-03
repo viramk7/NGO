@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
-using NGOWorld.Data.CustomModel;
-using NGOWorld.Data.Entities;
 using NGOWorld.Data.Repository.Generic;
+using NGOWorld.Entity.Entities;
 using NGOWorld.Service.Generic;
 using System;
 using System.Collections.Generic;

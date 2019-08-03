@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace NGOWorld.Data.CustomModel
+namespace NGOWorld.Entity.CustomModel
 {
     public class DoctorModel
     {

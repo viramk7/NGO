@@ -1,12 +1,11 @@
 ﻿using AutoMapper;
-using NGOWorld.Data.CustomModel;
-using NGOWorld.Data.Entities;
+using NGOWorld.Entity.CustomModel;
+using NGOWorld.Entity.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace NGOWorld.CoreHelper
+namespace NGOWorld.Entity.Mapping
 {
     public class Mappings : Profile
     {

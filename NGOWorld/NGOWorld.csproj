@@ -23,7 +23,7 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\NGOWorld.Data\NGOWorld.Data.csproj" />
+    <ProjectReference Include="..\NGOWorld.Entity\NGOWorld.Entity.csproj" />
     <ProjectReference Include="..\NGOWorld.Service\NGOWorld.Service.csproj" />
   </ItemGroup>
 
