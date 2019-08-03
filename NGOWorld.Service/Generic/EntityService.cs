@@ -8,7 +8,7 @@ using System.Text;
 
 namespace NGOWorld.Service.Generic
 {
-    public class EntityService<TEntity> : IEntityService<TEntity> where TEntity : BaseEntity
+    public class EntityService<TEntity> : IEntityService<TEntity> where TEntity : class
     {
         private readonly IRepository<TEntity> _repository;
         private readonly IMapper _mapper;
@@ -19,15 +19,15 @@ namespace NGOWorld.Service.Generic
             _mapper = mapper;
         }
 
-        public IList<TEntity> GetAll()
-        {
-            return _repository.Table.ToList();
-        }
+        //public IList<TEntity> GetAll()
+        //{
+        //    return _repository.Table.ToList();
+        //}
 
-        public TDto GetAll<TDto>()
+        public IList<TDto> GetAll<TDto>()
         {
             var list = _repository.Table.ToList();
-            return _mapper.Map<TDto>(list);
+            return _mapper.Map<IList<TDto>>(list);
         }
 
         public TEntity GetById(object id)
@@ -41,10 +41,10 @@ namespace NGOWorld.Service.Generic
             return _mapper.Map<TDto>(entity);
         }
 
-        public void Insert(TEntity entity)
-        {
-            _repository.Insert(entity);
-        }
+        //public void Insert(TEntity entity)
+        //{
+        //    _repository.Insert(entity);
+        //}
 
         public void Insert<TDto>(TDto dto)
         {
@@ -52,16 +52,16 @@ namespace NGOWorld.Service.Generic
             _repository.Insert(entity);
         }
 
-        public void Insert(IEnumerable<TEntity> entities)
-        {
-            _repository.Insert(entities);
-        }
+        //public void Insert(IEnumerable<TEntity> entities)
+        //{
+        //    _repository.Insert(entities);
+        //}
 
-        public void Insert<TDto>(IEnumerable<TDto> dtos)
-        {
-            var entities = _mapper.Map<IEnumerable<TEntity>>(dtos);
-            _repository.Insert(entities);
-        }
+        //public void Insert<TDto>(IEnumerable<TDto> dtos)
+        //{
+        //    var entities = _mapper.Map<IEnumerable<TEntity>>(dtos);
+        //    _repository.Insert(entities);
+        //}
 
         public void Update(TEntity entity)
         {
@@ -97,22 +97,22 @@ namespace NGOWorld.Service.Generic
             _repository.Delete(entity);
         }
 
-        public void Delete<TDto>(TDto dto)
-        {
-            var entity = _mapper.Map<TEntity>(dto);
-            _repository.Delete(entity);
-        }
+        //public void Delete<TDto>(TDto dto)
+        //{
+        //    var entity = _mapper.Map<TEntity>(dto);
+        //    _repository.Delete(entity);
+        //}
 
-        public void Delete(IEnumerable<TEntity> entities)
-        {
-            _repository.Delete(entities);
-        }
+        //public void Delete(IEnumerable<TEntity> entities)
+        //{
+        //    _repository.Delete(entities);
+        //}
 
-        public void Delete<TDto>(IEnumerable<TDto> dtos)
-        {
-            var entities = _mapper.Map<IEnumerable<TEntity>>(dtos);
-            _repository.Delete(entities);
-        }
+        //public void Delete<TDto>(IEnumerable<TDto> dtos)
+        //{
+        //    var entities = _mapper.Map<IEnumerable<TEntity>>(dtos);
+        //    _repository.Delete(entities);
+        //}
 
         public void DeleteById(object id)
         {

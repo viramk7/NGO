@@ -6,7 +6,7 @@ using System.Text;
 
 namespace NGOWorld.Data.Repository.Generic
 {
-    public partial interface IRepository<TEntity> where TEntity : BaseEntity
+    public partial interface IRepository<TEntity> where TEntity : class
     {
         #region Methods
 

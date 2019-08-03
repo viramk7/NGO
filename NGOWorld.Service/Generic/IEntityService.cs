@@ -5,23 +5,23 @@ using System.Text;
 
 namespace NGOWorld.Service.Generic
 {
-    public interface IEntityService<TEntity> where TEntity : BaseEntity
+    public interface IEntityService<TEntity> where TEntity : class
     {
-        IList<TEntity> GetAll();
+        //IList<TEntity> GetAll();
 
-        TDto GetAll<TDto>();
+        IList<TDto> GetAll<TDto>();
 
         TEntity GetById(object id);
 
         TDto GetById<TDto>(object id);
 
-        void Insert(TEntity entity);
+        //void Insert(TEntity entity);
 
         void Insert<TDto>(TDto dto);
 
-        void Insert(IEnumerable<TEntity> entities);
+        //void Insert(IEnumerable<TEntity> entities);
 
-        void Insert<TDto>(IEnumerable<TDto> dtos);
+        //void Insert<TDto>(IEnumerable<TDto> dtos);
 
         void Update(TEntity entity);
 
@@ -35,11 +35,11 @@ namespace NGOWorld.Service.Generic
 
         void Delete(TEntity entity);
 
-        void Delete<TDto>(TDto dto);
+        //void Delete<TDto>(TDto dto);
 
-        void Delete(IEnumerable<TEntity> entities);
+        //void Delete(IEnumerable<TEntity> entities);
 
-        void Delete<TDto>(IEnumerable<TDto> dtos);
+        //void Delete<TDto>(IEnumerable<TDto> dtos);
 
         void DeleteById(object id);
     }

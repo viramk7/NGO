@@ -11,7 +11,7 @@ namespace NGOWorld.Data.Repository.Generic
     /// Represents the Entity Framework repository
     /// </summary>
     /// <typeparam name="TEntity">Entity type</typeparam>
-    public partial class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEntity
+    public partial class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         #region Fields
 

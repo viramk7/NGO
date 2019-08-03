@@ -7,6 +7,7 @@ using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
 using Microsoft.AspNetCore.Mvc;
 using NGOWorld.Common;
+using NGOWorld.Data.CustomModel;
 using NGOWorld.Data.Entities;
 using NGOWorld.Service.DoctorService;
 
@@ -35,7 +36,7 @@ namespace NGOWorld.Controllers
                     request.Sorts.Add(new SortDescriptor("DoctorName", ListSortDirection.Ascending));
                 }
 
-                List<tblDoctor> list = _service.GetAll().ToList();
+                List<DoctorModel> list = _service.GetAll<DoctorModel>().ToList();
 
                 return Json(list.ToDataSourceResult(request));
 
@@ -47,7 +48,7 @@ namespace NGOWorld.Controllers
 
         }
 
-        public IActionResult KendoSave([DataSourceRequest] DataSourceRequest request, tblDoctor model)
+        public IActionResult KendoSave([DataSourceRequest] DataSourceRequest request, DoctorModel model)
         {
 
             if (model == null || !ModelState.IsValid)
@@ -83,13 +84,13 @@ namespace NGOWorld.Controllers
             return Json(new[] { model }.ToDataSourceResult(request, ModelState));
         }
 
-        public IActionResult KendoDestroy([DataSourceRequest] DataSourceRequest request, tblDoctor model)
+        public IActionResult KendoDestroy([DataSourceRequest] DataSourceRequest request, DoctorModel model)
         {
             string deleteMessage = string.Empty;
 
             try
             {
-                _service.Delete(model.Id);
+                _service.DeleteById(model.Id);
             }
             catch (Exception ex)
             {
